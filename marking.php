@@ -18,7 +18,7 @@ include_once 'crud2.php';
 
 
 <?php
-    $res = $MySQLiconn->query("SELECT * FROM assignment");
+    $res = $MySQLiconn->query("SELECT * FROM assignments");
     while($row=$res->fetch_array()) {
 ?>
 <body>
@@ -43,6 +43,7 @@ include_once 'crud2.php';
                 <button type="submit" name="marks">Save Marks</button>
             </form>
         </section>
+        <!-- <br><br> -->
     </div>
 <?php
 }
