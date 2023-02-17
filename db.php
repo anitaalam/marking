@@ -1,6 +1,6 @@
 <?php
 // Step 1: connect to the database
-define('_HOST_NAME','localhostt');
+define('_HOST_NAME','localhost');
 define('_DATABASE_NAME','marking');
 define('_DATABASE_USER_NAME','root');
 define('_DATABASE_PASSWORD','');
