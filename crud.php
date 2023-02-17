@@ -1,7 +1,7 @@
 <?php 
 include_once 'db.php';
 
-/* code for data insert - C in CRUD*/
+/* code for data insert*/
 if(isset($_POST['save'])) {
 
         // $id = $MySQLiconn->real_escape_string($_POST['id']);
@@ -20,35 +20,10 @@ if(isset($_POST['save'])) {
 /* end code for data insert */
 
 
-
-/* code for data delete - D in CRUD*/
-if(isset($_GET['del'])) {
-    $SQL = $MySQLiconn->query("DELETE FROM assignments WHERE id=".$_GET['del']);
-    // header allows you to redirect users wherever you see fit
-    // we use it to refresh the page so that new data has been changed
-    header("Location: edit.php");
-}
-/* end code for data delete */
-
-
-
-/* code for data update - U in CRUD */
-if(isset($_GET['edit'])) {
-    $SQL = $MySQLiconn->query("SELECT * FROM assignments WHERE id=".$_GET['edit']);
-    $getROW = $SQL->fetch_array();
-}
-
+/* code for data update */
 if(isset($_POST['update'])) {
     /* UPDATE table_name SET fn='"ffield_name1"']."', ln='"ffield_name2"' WHERE id="editButton" */
     $SQL = $MySQLiconn->query("UPDATE marks SET m1='".$_POST['m1']."', m2='".$_POST['m2']."', m3='".$_POST['m3']."' WHERE id=".$_GET['edit']);
-    // header("Location: edit.php");
 }
 /* end code for data update */
 
-
-if(isset($_GET['layout'])) {
-    $SQL = $MySQLiconn->query("SELECT * FROM assignments WHERE id=".$_GET['layout']);
-    $getROW = $SQL->fetch_array();
-}
-
-?>
