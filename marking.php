@@ -29,6 +29,20 @@ include_once 'crud2.php';
             <p>Assignment 2</b> <i><?php echo $row['q2']; ?></i></p>
             <p>Assignment 3</b> <i><?php echo $row['q3']; ?></i></p>
         </section>
+
+        <section class="score">
+            <form method="post">
+                <h4>Student ID: <input type="text" name="student" maxlength="8" value="<?php if(isset($_GET['edit'])) echo $getROW['student']; ?>"></h4>
+
+                <h4>Assignement 1 Mark: <input type="text" name="m1" maxlength="1" value="<?php if(isset($_GET['edit'])) echo $getROW['m1']; ?>"></h4>
+
+                <h4>Assignment 2 Mark: <input type="text" name="m2" maxlength="16" value="<?php if(isset($_GET['edit'])) echo $getROW['m2']; ?>"></h4>
+                        
+                <h4>Assignment 3 Mark: <input type="text" name="m3" value="<?php if(isset($_GET['edit'])) echo $getROW['m3']; ?>"></h4>
+                
+                <button type="submit" name="marks">Save Marks</button>
+            </form>
+        </section>
     </div>
 <?php
 }
